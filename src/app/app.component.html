@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col_4">
+      <div class="base">
+        <div class="ecran">
+          {{maintext}}
+        </div>
+          <div class="clavier">
+            <table style="width: 100%;">
+              
+              <tr>
+                <td class="but num" colspan="1" (click)="pressKey('1')"> 1 </td>
+                <td class="but num" colspan="1" (click)="pressKey('2')"> 2 </td>
+                <td class="but num" colspan="1" (click)="pressKey('3')"> 3 </td>
+                <td class="but op" colspan="1" (click)="pressKey('+')"> + </td>
+              </tr>
+              <tr>
+                <td class="but num" colspan="1" (click)="pressKey('4')"> 4 </td>
+                <td class="but num" colspan="1" (click)="pressKey('5')"> 5 </td>
+                <td class="but num" colspan="1" (click)="pressKey('6')"> 6 </td>
+                <td class="but op" colspan="1" (click)="pressKey('-')"> - </td>
+              </tr>
+              <tr>
+                <td class="but num" colspan="1" (click)="pressKey('7')"> 7 </td>
+                <td class="but num" colspan="1" (click)="pressKey('8')"> 8 </td>
+                <td class="but num" colspan="1" (click)="pressKey('9')"> 9 </td>
+                <td class="but op" colspan="1" (click)="pressKey('X')"> X </td>
+              </tr>
+              <tr>
+                <td class="but num" colspan="1" (click)="pressKey('0')"> 0 </td>
+                <td class="but init" colspan="1" (click)="allclear()"> AC </td>
+                <td class="but egal" colspan="1" (click)="reponse()">=</td>
+                <td class="but op" colspan="1" (click)="pressKey('/')"> / </td>
+              </tr>
+            </table>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.base {
+background:darkslategrey;
+margin-top: 5 vh;
+border: 3px xolid black;
+width: 50%;
+}
+.ecran{
+    background: lightgrey;
+    height: 25 vh;
+    padding: 5%;
+    font-size: 4rem;
+    text-align:right;
+    font-family: Courier, monospace;
+    overflow:auto;
+}
+.sous ecran{
+    border-bottom: 1px solid black;
+    height: 25%;
+    font-size:2rem;
+    overflow: auto;
+}
+.clavier
+{
+    height: calc(200%/3);
+}
+.but{
+    margin:0;
+    height: 20%;
+    background: whitesmoke;
+    color: black;
+    padding: 5%;
+    font-size: 2rem;
+    text-align:center;
+    cursor:pointer;
+    opacity:0.9;
+}
+.but:hover{
+    opacity:1;
+}
+
+.init{
+    color:white;
+    background-color:black;
+}
+.egal{
+    color:white;
+    background-color: orangered;
+}
+.op{
+    color:white;
+    background-color:black;
+}
