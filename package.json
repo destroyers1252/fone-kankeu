@@ -6,12 +6,13 @@
     "npm": "6.14.5"
   },
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
+    
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
