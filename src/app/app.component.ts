@@ -12,75 +12,116 @@ export class AppComponent {
   operand2=0;
   operator='';
   answered=false;
-  operatorset=false;
+  uniqueoperatorset=false;
+  ans='0';
+  multipleoperator=false;
 
   pressKey(key: string){
-    if(key==='/' ||key==='+' ||key==='-' ||key==='X' ){
+    if(key==='/' ||key==='+' ||key==='-' ||key==='*' ){
     const lastkey=this.maintext[this.maintext.length-1];
-    if(lastkey==='/' ||lastkey==='+' ||lastkey==='-' ||lastkey==='X' ){
-      this.operatorset=true;
+    if(this.uniqueoperatorset===true ){
+      this.uniqueoperatorset=false;
+      this.multipleoperator=true;
+    }else{ this.operand1=parseFloat(this.maintext)
+      this.operator=key;
+      this.uniqueoperatorset=true;
     }
-    if((this.operatorset)||(this.maintext==='')){
-      return;
-    }
-    this.operand1=parseFloat(this.maintext)
-    this.operator=key;
-    this.operatorset=true;
+   
   }
   this.operand1=parseFloat(this.maintext);
-    if(this.maintext.length === 10){
+    if(this.maintext.length === 40){
       return;
     }
-      if(this.maintext==='0'||this.maintext==='NaN'||this.maintext==='impossible de diviser par zéro'||this.maintext==='ERROR: RANGE EXCEDED'||this.maintext==='INVALID OPERATION'){
+      if(this.maintext==='0'||this.maintext==='NaN'||this.maintext==='ERROR'||this.maintext==='ERROR: RANGE EXCEDED'||this.maintext==='INVALID OPERATION'){
       this.maintext=key;
     }else{
       this.maintext +=key;
     }
     
   }
+  ANS(){
+    this.maintext=this.ans;
+
+  }
+  DELETE(){
+   
+    if (this.maintext.length===1 || this.maintext==='0'||this.maintext==='NaN'||this.maintext==='ERROR'||this.maintext==='ERROR: RANGE EXCEDED'||this.maintext==='INVALID OPERATION'){
+      this.maintext='0';
+    }else{
+      this.maintext=this.maintext.substring(0,this.maintext.length-1);
+    }
+  }
   allclear(){
     this.maintext='0'
-    this.operatorset=false;
+    this.uniqueoperatorset=false;
+    this.multipleoperator=false;
   }
   reponse(){
-    this.operand2=parseFloat(this.maintext.split(this.operator)[1]);
+    if(this.multipleoperator==true){
+      if(eval(this.maintext)===Infinity){
+        this.maintext='ERROR';
+        this.ans='0'
+      
+      }
+      this.maintext=eval(this.maintext);
+      this.ans=this.maintext;
+      if(this.maintext.length>20){
+        this.maintext='ERROR: RANGE EXCEDED';
+        this.ans='0'
+        
+      }
+    }else{
+      this.operand2=parseFloat(this.maintext.split(this.operator)[1]);
     if(this.operator === '/'){
-      this.maintext=(this.operand1 / this.operand2).toString();
-      if(this.maintext.length>9){
+      this.maintext=(this.operand1 / this.operand2).toString();  
+      this.ans=this.maintext;
+      if(this.maintext.length>20){
         this.maintext=this.maintext.substr(0,9);
+        this.ans=this.maintext;
       }
       if (this.operand2 === 0){
-        this.maintext='impossible de diviser par zéro';
+        this.maintext='ERROR';
+        this.ans='0'
       
       }
       
-    }else if(this.operator === 'X'){
-      this.maintext=(this.operand1*this.operand2).toString();
-      if(this.maintext.length>9){
+    }else if(this.operator === '*'){
+      this.maintext=(this.operand1 * this.operand2).toString();
+      this.ans=this.maintext;
+      if(this.maintext.length>20){
         this.maintext='ERROR: RANGE EXCEDED';
+        this.ans='0'
         
       }
       
     }else if(this.operator === '+'){
-      this.maintext=(this.operand1+this.operand2).toString();
-      if(this.maintext.length>9){
+      this.maintext=(this.operand1 + this.operand2).toString();
+      this.ans=this.maintext;
+      if(this.maintext.length>20){
         this.maintext='ERROR: RANGE EXCEDED';
+        this.ans='0'
       }
       
     }else if(this.operator === '-'){
-      this.maintext=(this.operand1-this.operand2).toString();
-      if(this.maintext.length>9){
+      this.maintext=(this.operand1 - this.operand2).toString();
+      this.ans=this.maintext;
+      if(this.maintext.length>20){
         this.maintext='ERROR: RANGE EXCEDED';
+        this.ans='0'
       }
       
     }
-    else if(this.operatorset===false){
+    else if(this.uniqueoperatorset===false){
       this.maintext=this.maintext;
     }
     else{
       this.maintext='INVALID OPERATION';
+      this.ans='0'
   }
-  this.operatorset=false;
+  this.uniqueoperatorset=false;
+  this.multipleoperator=false;
+    }
+    
 
 }
 }

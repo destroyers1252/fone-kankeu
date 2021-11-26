@@ -2,8 +2,10 @@
 background:darkslategrey;
 margin-top: 5 vh;
 border: 3px xolid black;
-width: 50%;
+width: 700px;
 }
+
+
 .ecran{
     background: lightgrey;
     height: 25 vh;
@@ -19,9 +21,12 @@ width: 50%;
     font-size:2rem;
     overflow: auto;
 }
-.clavier
+.claviers
 {
-    height: calc(200%/3);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
 }
 .but{
     margin:0;
@@ -36,7 +41,7 @@ width: 50%;
 }
 .but:hover{
     opacity:1;
-}
+}but
 
 .init{
     color:white;
@@ -49,4 +54,44 @@ width: 50%;
 .op{
     color:white;
     background-color:black;
+    width: 150px;
+    padding: 10px;
+    height: 100px;
+}
+.num{
+    width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+.virgule{
+    width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+.egal{
+
+    width: 335px;
+    padding: 20px;
+    height: 100px;
+}
+.fin{
+    width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+.del{
+    background-color: red;
+    width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+.ans{
+    width: 150px;
+    padding: 20px;
+    height: 100px;
+}
+.init{
+    width: 150px;
+    padding: 20px;
+    height: 100px;
 }
