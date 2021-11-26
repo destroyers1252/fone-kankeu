@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col_4">
+      <div class="base">
+        <div class="ecran">
+          {{maintext}}
+        </div>
+          <div class="clavier">
+            <div class="claviers"> 
+              <button class="but num" colspan="1" (click)="pressKey('1')"> 1 </button>
+              <button class="but num" colspan="1" (click)="pressKey('2')"> 2 </button>
+              <button class="but num" colspan="1" (click)="pressKey('3')"> 3 </button>
+              <button class="but op" colspan="1" (click)="pressKey('+')"> + </button>
+            </div>
+            <div class="claviers">
+              <button class="but num" colspan="1" (click)="pressKey('4')"> 4 </button>
+              <button class="but num" colspan="1" (click)="pressKey('5')"> 5 </button>
+              <button class="but num" colspan="1" (click)="pressKey('6')"> 6 </button>
+              <button class="but op" colspan="1" (click)="pressKey('-')"> - </button>
+            </div> 
+            <div class="claviers">
+              <button class="but num" colspan="1" (click)="pressKey('7')"> 7 </button>
+              <button class="but num" colspan="1" (click)="pressKey('8')"> 8 </button>
+              <button class="but num" colspan="1" (click)="pressKey('9')"> 9 </button>
+              <button class="but op" colspan="1" (click)="pressKey('*')"> * </button>
+            </div>
+            <div class="claviers">
+              <button class="but num" colspan="1" (click)="pressKey('0')"> 0 </button>
+              <button class="but virgule" colspan="1" (click)="pressKey('.')"> . </button>
+              
+              <button class="but del" colspan="1" (click)="DELETE()"> DEL </button>
+              
+              <button class="but op" colspan="1" (click)="pressKey('/')"> / </button>
+            </div>
+            <div class="claviers">
+              <button class="but init" colspan="1" (click)="allclear()"> AC </button>
+              
+              <button class="but ans" colspan="1" (click)="ANS()"> ANS </button>
+              <button class="but egal" colspan="1" (click)="reponse()">=</button>
+            </div>
+                
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
