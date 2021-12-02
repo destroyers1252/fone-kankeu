@@ -1,0 +1,34 @@
+<div class="body">
+	<div>
+		<h1>CONVERTISSEUR DE DEVISES : FCFA, EURO, DOLLARS </h1>
+	</div>
+	<form #monForm=ngForm class="form">
+		<fieldset>
+			<p>
+				<label>Veuillez choisir la monnaie de départ</label><br/><br/>
+				<select name="startdevise" id="anime" [(ngModel)]=startdevise>
+					<option value="FCFA"> FRANC CFA </option>
+					<option value="EURO"> EURO </option>
+					<option value="DOLLARS"> DOLLARS </option>
+	
+				</select>
+			</p>
+		<br/><br/>
+		<label>Veuillez entrer la somme à convertir</label><br/>
+		<p><input type="number" name="val" id="val" require [(ngModel)]=val/></p><br/>
+		<p>
+				<label>Veuillez choisir la monnaie en laquelle vous souhaitez convertir</label><br/><br/>
+				<select name="finaldevise" id="anime" [(ngModel)]=finaldevise>
+					<option value="FCFA"> FRANC CFA </option>
+					<option value="EURO"> EURO </option>
+					<option value="DOLLARS"> DOLLARS </option>
+	
+				</select>
+		</p><br/>
+		<label><strong>Resultat</strong></label><br/><br/>
+		<p name="resultat"> {{val|devisePipe:startdevise:finaldevise}}</p>
+		</fieldset>
+	 
+	</form>
+	
+</div>
